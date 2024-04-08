@@ -1,9 +1,14 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useReducer, useState } from 'react'
 import './app.css'
 import { IColorResponse } from '../../types/api'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectCount } from '../../redux/selectors'
+import { increment } from '../../redux/basicSlice'
 
 function App() {
   const [schema, setSchema] = useState({} as IColorResponse)
+  const count = useSelector(selectCount)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     fetch(
@@ -20,6 +25,10 @@ function App() {
     })
   }, [])
 
+  const buttonFunc = () => {
+    dispatch(increment())
+  }
+
   return (
     <>
       <div className="root">
@@ -28,10 +37,10 @@ function App() {
             return (
               <span
                 style={{
-                  height: '200px',
-                  width: '200px',
+                  height: '100px',
+                  width: '100px',
                   backgroundColor: color.hex.value,
-                  fontSize: '24px',
+                  fontSize: '16px',
                 }}
               >
                 {color.rgb.value}
@@ -39,6 +48,7 @@ function App() {
             )
           })}
       </div>
+      <button onClick={buttonFunc}>{count}</button>
     </>
   )
 }
