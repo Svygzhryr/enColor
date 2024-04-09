@@ -1,3 +1,3 @@
-# enColor
+# CryptOwl
 
-A web application for color scheme generation using thecolorapi (for now)
+Under Development
