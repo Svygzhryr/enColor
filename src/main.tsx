@@ -5,11 +5,15 @@ import './styles/reset.css'
 import './styles/index.css'
 import { store } from './redux/store.ts'
 import { Provider } from 'react-redux'
+import { ThemeProvider } from 'styled-components'
+import { theme } from './styles/theme.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
+    <ThemeProvider theme={theme}>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </ThemeProvider>
   </Provider>
 )

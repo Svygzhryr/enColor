@@ -1,19 +1,14 @@
 export const theme = {
   colors: {
-    d1: '',
-    d2: '',
-    d3: '',
-    m1: '',
-    m2: '',
+    d1: '#0D0D13',
+    d2: '#151522',
+    d3: '#1C1C30',
+    m1: '#8080F5',
+    m2: '#474784',
     m3: '',
-    l1: '',
-    l2: '',
+    l1: '#E6E6F5',
+    l2: '#67679e',
     l3: '',
   },
-  fonts: ['sans-serif', 'Roboto'],
-  fontSizes: {
-    small: '1em',
-    medium: '2em',
-    large: '3em',
-  },
+  fonts: ['Outfit'],
 }

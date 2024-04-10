@@ -1,12 +1,38 @@
+import { useEffect, useState } from 'react'
 import { Header } from '../../components/header'
-import '../../styles/app.css'
-import { Container } from '../../styles/main-styles'
+import { Container } from './styles'
+import { IGlobalData } from '../../types/api'
 
-function App() {
+const App = () => {
+  const [globalData, setGlobalData] = useState({} as IGlobalData)
+
+  useEffect(() => {
+    const url = 'https://api.coinlore.net/api/global/'
+    fetch(url, {
+      method: 'GET',
+    }).then(async (data) => {
+      const body = await data.json()
+      setGlobalData(body[0])
+    })
+  }, [])
+
   return (
     <>
       <Header />
-      <Container></Container>
+      <Container>
+        <h1>Global crypto stats</h1>
+
+        <ul>
+          {Object.keys(globalData).map((key, index) => {
+            const values = Object.values(globalData)
+            return (
+              <li>
+                {key} - {values[index]}
+              </li>
+            )
+          })}
+        </ul>
+      </Container>
     </>
   )
 }
