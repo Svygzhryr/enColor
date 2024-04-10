@@ -1,37 +1,42 @@
-import { useEffect, useState } from 'react'
 import { Header } from '../../components/header'
-import { Container } from './styles'
-import { IGlobalData } from '../../types/api'
+import {
+  Container,
+  Grid,
+  GridItem,
+  GridItemName,
+  GridItemValue,
+  Title,
+} from './styles'
+import { useGetGlobalStatsQuery } from '../../redux/apiSlice'
+import { globalStatKeys } from '../../utils/globalStats'
 
 const App = () => {
-  const [globalData, setGlobalData] = useState({} as IGlobalData)
-
-  useEffect(() => {
-    const url = 'https://api.coinlore.net/api/global/'
-    fetch(url, {
-      method: 'GET',
-    }).then(async (data) => {
-      const body = await data.json()
-      setGlobalData(body[0])
-    })
-  }, [])
+  const { data, error, isLoading } = useGetGlobalStatsQuery()
+  if (!data) return
 
   return (
     <>
       <Header />
       <Container>
-        <h1>Global crypto stats</h1>
+        <Title>Global stats</Title>
 
-        <ul>
-          {Object.keys(globalData).map((key, index) => {
-            const values = Object.values(globalData)
+        <Grid>
+          {Object.keys(data).map((key, index) => {
+            const values = Object.values(data)
+            let type
+            if (globalStatKeys[index].includes('Change')) {
+              values[index][0] === '-' ? (type = 'fall') : (type = 'rise')
+            } else {
+              type = 'm1'
+            }
             return (
-              <li>
-                {key} - {values[index]}
-              </li>
+              <GridItem key={`${key}`}>
+                <GridItemName>{globalStatKeys[index]}</GridItemName>
+                <GridItemValue $type={type}>{values[index]}</GridItemValue>
+              </GridItem>
             )
           })}
-        </ul>
+        </Grid>
       </Container>
     </>
   )

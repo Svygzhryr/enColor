@@ -1,3 +1,5 @@
+import { createGlobalStyle } from 'styled-components'
+
 export const theme = {
   colors: {
     d1: '#0D0D13',
@@ -9,6 +11,16 @@ export const theme = {
     l1: '#E6E6F5',
     l2: '#67679e',
     l3: '',
+    rise: '#99f580',
+    fall: '#f59080',
   },
   fonts: ['Outfit'],
 }
+
+export const GlobalStyle = createGlobalStyle`
+*,
+*::before,
+*::after {
+  font-family: 'Outfit', sans-serif;
+}
+`
