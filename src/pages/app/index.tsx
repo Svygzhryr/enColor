@@ -3,12 +3,13 @@ import {
   Container,
   Grid,
   GridItem,
+  GridItemDesc,
   GridItemName,
   GridItemValue,
   Title,
 } from './styles'
 import { useGetGlobalStatsQuery } from '../../redux/apiSlice'
-import { globalStatKeys } from '../../utils/globalStats'
+import { globalStatDesc, globalStatKeys } from '../../utils/globalStats'
 
 const App = () => {
   const { data, error, isLoading } = useGetGlobalStatsQuery()
@@ -31,6 +32,7 @@ const App = () => {
             }
             return (
               <GridItem key={`${key}`}>
+                <GridItemDesc>{globalStatDesc[index]}</GridItemDesc>
                 <GridItemName>{globalStatKeys[index]}</GridItemName>
                 <GridItemValue $type={type}>{values[index]}</GridItemValue>
               </GridItem>
