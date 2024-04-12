@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom'
 import { LogoCRY, LogoContainer, LogoO } from './style'
 
 export const Logo = () => {
   return (
     <>
-      <LogoContainer>
-        <LogoCRY>CRY</LogoCRY>
-        <LogoO>O</LogoO>
-      </LogoContainer>
+      <Link to="/">
+        <LogoContainer>
+          <LogoCRY>CRY</LogoCRY>
+          <LogoO>O</LogoO>
+        </LogoContainer>
+      </Link>
     </>
   )
 }

@@ -6,6 +6,10 @@ body {
   background: #0d0d13;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {

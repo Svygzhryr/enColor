@@ -6,30 +6,24 @@ import './styles/index.css'
 import { store } from './redux/store.ts'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { theme } from './styles/theme.ts'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { defaultTheme } from './styles/theme.ts'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Rates } from './pages/rates/index.tsx'
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-  },
-  {
-    path: '/rates',
-    element: <Rates />,
-  },
-  // {
-  //   path: '/news',
-  //   element: <News />,
-  // },
-])
+import { News } from './pages/news/index.tsx'
+import { Header } from './components/header/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={defaultTheme}>
       <React.StrictMode>
-        <RouterProvider router={router} />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" Component={App} />
+            <Route path="/rates" Component={Rates} />
+            <Route path="/news" Component={News} />
+          </Routes>
+        </BrowserRouter>
       </React.StrictMode>
     </ThemeProvider>
   </Provider>

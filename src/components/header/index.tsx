@@ -1,14 +1,17 @@
+import { Link } from 'react-router-dom'
 import { Logo } from '../logo'
 import { HeaderWrapper, NavButton } from './style'
 
 export const Header = () => {
   return (
-    <>
-      <HeaderWrapper>
+    <HeaderWrapper>
+      <Link to="/rates">
         <NavButton>Rates</NavButton>
-        <Logo />
+      </Link>
+      <Logo />
+      <Link to="/news">
         <NavButton>News</NavButton>
-      </HeaderWrapper>
-    </>
+      </Link>
+    </HeaderWrapper>
   )
 }

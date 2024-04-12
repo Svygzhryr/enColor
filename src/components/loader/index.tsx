@@ -1,5 +1,10 @@
 import React from 'react'
+import { LoaderElement, LoaderWrapper } from './style'
 
 export const Loader = () => {
-  return <div>Loader</div>
+  return (
+    <LoaderWrapper>
+      <LoaderElement></LoaderElement>
+    </LoaderWrapper>
+  )
 }

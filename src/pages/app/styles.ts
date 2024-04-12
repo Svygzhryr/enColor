@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.section`
+export const Container = styled.div`
   margin: 50px auto;
 
   color: ${(props) => props.theme.colors.l1};

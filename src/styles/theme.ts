@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-export const theme = {
+export const defaultTheme = {
   colors: {
     d1: '#0D0D13',
     d2: '#151522',
