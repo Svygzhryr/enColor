@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
 
-export interface CounterState {
+export interface CurrentPage {
   value: number
 }
 
-const initialState: CounterState = {
+const initialState: CurrentPage = {
   value: 0,
 }
 
@@ -13,19 +12,16 @@ export const basicSlice = createSlice({
   name: 'basic',
   initialState,
   reducers: {
-    increment: (state) => {
+    nextPage: (state) => {
       state.value += 1
     },
-    decrement: (state) => {
+    prevPage: (state) => {
       state.value -= 1
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
     },
   },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = basicSlice.actions
+export const { nextPage, prevPage } = basicSlice.actions
 
 export default basicSlice.reducer

@@ -1,3 +1,3 @@
 import { RootState } from './store'
 
-export const selectCount = (state: RootState) => state.counterReducer.value
+export const selectPage = (state: RootState) => state.basicReducer.value

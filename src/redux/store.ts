@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from './basicSlice'
+import basicReducer from './basicSlice'
 import { api } from './apiSlice'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
 export const store = configureStore({
-  reducer: { counterReducer, [api.reducerPath]: api.reducer },
+  reducer: { basicReducer, [api.reducerPath]: api.reducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(api.middleware),
 })

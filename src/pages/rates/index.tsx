@@ -13,8 +13,11 @@ import {
   RatesWrapper,
 } from './style'
 import { Loader } from '../../components/loader'
+import { useSelector } from 'react-redux'
+import { selectPage } from '../../redux/selectors'
 
 export const Rates = () => {
+  const currentPage = useSelector(selectPage)
   const { data, error, isLoading } = useGetAllCoinsQuery({
     start: 0,
     limit: 10,
@@ -26,7 +29,9 @@ export const Rates = () => {
 
   return (
     <RatesWrapper>
-      <ButtonPrev onClick={handlePrev}></ButtonPrev>
+      <ButtonPrev onClick={handlePrev}>
+        <div></div>
+      </ButtonPrev>
 
       {isLoading ? (
         <Loader />
@@ -41,7 +46,7 @@ export const Rates = () => {
                   <CoinName>{coin.name}</CoinName>
                   <CoinPrice>{coin.price_usd} $</CoinPrice>
                   <CoinChangeDay $type={coin.percent_change_24h.includes('-')}>
-                    {coin.percent_change_24h}
+                    {coin.percent_change_24h} %
                   </CoinChangeDay>
                 </CoinWrapper>
               ))}
@@ -49,7 +54,9 @@ export const Rates = () => {
           </Container>
         )
       )}
-      <ButtonNext onClick={handleNext}></ButtonNext>
+      <ButtonNext onClick={handleNext}>
+        <div></div>
+      </ButtonNext>
     </RatesWrapper>
   )
 }

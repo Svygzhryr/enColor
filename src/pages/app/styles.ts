@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  margin: 50px auto;
+  margin: 20px auto 50px;
+  width: 70dvw;
 
   color: ${(props) => props.theme.colors.l1};
   font-size: 24px;
@@ -11,14 +12,15 @@ export const Container = styled.div`
 `
 
 export const Title = styled.h1`
-  min-width: 260px;
-  width: calc(80dvw / 3 - 40px);
-  margin: 0 auto;
+  min-width: 220px;
+  width: calc(70dvw / 3 - 50px);
+  margin: 50px auto 0px;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-content: center;
 
+  color: ${(props) => props.theme.colors.l1};
   font-family: 'Outfit', sans-serif;
   font-size: 26px;
 
@@ -28,11 +30,11 @@ export const Title = styled.h1`
 export const Grid = styled.ul`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 120px);
+  grid-template-rows: repeat(3, 120px);
   justify-content: center;
   gap: 20px;
-  width: 80dvw;
-  margin: 50px auto 0;
+  width: 100%;
+  margin: 20px auto 0;
 `
 
 export const GridItemDesc = styled.div`
@@ -42,8 +44,8 @@ export const GridItemDesc = styled.div`
   position: absolute;
   justify-content: center;
   align-items: center;
-  width: calc(100% - 40px);
-  height: calc(100% - 40px);
+  width: calc(100% - 20px);
+  height: calc(100% - 20px);
 
   font-size: 20px;
 
@@ -58,7 +60,7 @@ export const GridItemDesc = styled.div`
 
 export const GridItem = styled.li`
   position: relative;
-  min-width: 280px;
+  min-width: 240px;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -92,6 +94,83 @@ export const GridItemName = styled.h3`
 `
 export const GridItemValue = styled.h2<{ $type?: string }>`
   font-size: 24px;
-  font-weight: 700;
   color: ${(props) => props.theme.colors[props.$type || 'm1']};
+`
+
+export const Markets = styled.div`
+  width: 100%;
+  margin: 20px auto 0;
+`
+
+export const MarketItem = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+
+    color: ${(props) => props.theme.colors.l1};
+    font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+
+    border-radius: 20px;
+    background-color: ${(props) => props.theme.colors.d2};
+
+    transition: all 0.2s ease-in-out;
+  }
+
+  h2 {
+    width: 33%;
+    padding: 20px 0;
+    margin: 0;
+
+    color: ${(props) => props.theme.colors.m1};
+
+    border-radius: 20px;
+    background-color: ${(props) => props.theme.colors.d2};
+
+    transition: all 0.2s ease-in-out;
+
+    &:first-child {
+      width: 25%;
+      color: ${(props) => props.theme.colors.l1};
+
+      text-align: center;
+    }
+
+    &:last-child {
+      /* width: 30%; */
+
+      color: ${(props) => props.theme.colors.l1};
+
+      text-align: center;
+    }
+  }
+
+  a {
+    height: 100%;
+    width: 20%;
+    padding: 20px;
+
+    font-size: 26px;
+    text-decoration: none;
+    color: ${(props) => props.theme.colors.l1};
+
+    border-radius: 20px;
+    background-color: ${(props) => props.theme.colors.d2};
+
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: ${(props) => props.theme.colors.d3};
+    }
+
+    &:active {
+      background-color: ${(props) => props.theme.colors.m1};
+    }
+  }
 `

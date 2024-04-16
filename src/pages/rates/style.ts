@@ -5,6 +5,9 @@ export const RatesWrapper = styled.div`
   position: relative;
 
   button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     margin: 0 auto;
     width: 20%;
@@ -13,12 +16,44 @@ export const RatesWrapper = styled.div`
     background-color: transparent;
     border: none;
 
-    transition: all 0.2s ease-in-out;
-
     cursor: pointer;
 
-    &:hover {
-      background-color: ${(props) => props.theme.colors.d3};
+    div {
+      /* -webkit-box-shadow: inset 0px 0px 19px 14px transparent;
+      -moz-box-shadow: inset 0px 0px 19px 14px transparent;
+      box-shadow: inset 0px 0px 19px 14px transparent; */
+      border: 50px solid transparent;
+      border-right: 50px solid ${(props) => props.theme.colors.d3};
+
+      transition: all 0.2s ease-in-out;
+    }
+
+    &:last-child {
+      div {
+        border: 50px solid transparent;
+        border-left: 50px solid ${(props) => props.theme.colors.d3};
+      }
+    }
+
+    &:hover div {
+      /* -webkit-box-shadow: inset 0px 0px 19px 14px rgba(128, 128, 245, 0.82);
+      -moz-box-shadow: inset 0px 0px 19px 14px rgba(128, 128, 245, 0.82);
+      box-shadow: inset 0px 0px 19px 14px rgba(128, 128, 245, 0.82); */
+      border-right: 50px solid ${(props) => props.theme.colors.m2};
+    }
+
+    &:hover:last-child {
+      div {
+        border: 50px solid transparent;
+
+        border-left: 50px solid ${(props) => props.theme.colors.m2};
+      }
+    }
+
+    &:active div {
+      transform: scale(1.3);
+
+      transition: none;
     }
   }
 `
@@ -68,13 +103,12 @@ export const CoinName = styled.h2`
 
 export const CoinPrice = styled.h2`
   width: 20%;
-  font-weight: 700;
   color: ${(props) => props.theme.colors.m1};
 `
 
 export const CoinChangeDay = styled.h2<{ $type: boolean }>`
   width: 10%;
-  font-weight: 700;
+  font-size: 24px;
 
   color: ${(props) =>
     props.$type ? props.theme.colors.fall : props.theme.colors.rise};

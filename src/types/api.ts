@@ -8,8 +8,8 @@ export interface IGlobalData {
   mcap_change: string
   volume_change: string
   avg_change_percent: string
-  volume_ath: number
-  mcap_ath: number
+  volume_ath: number | null
+  mcap_ath: number | null
 }
 
 export interface IAllCoinsResponse {
@@ -39,4 +39,14 @@ export interface ICoin {
 export interface IGetAllCoins {
   start: number
   limit: number
+}
+
+export interface IMarketData {
+  id: string
+  name: string
+  name_id: string
+  volume_usd: number
+  active_pairs: number
+  url: string
+  country: string
 }

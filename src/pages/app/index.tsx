@@ -1,4 +1,3 @@
-import { Header } from '../../components/header'
 import {
   Container,
   Grid,
@@ -6,25 +5,41 @@ import {
   GridItemDesc,
   GridItemName,
   GridItemValue,
+  MarketItem,
+  Markets,
   Title,
 } from './styles'
-import { useGetGlobalStatsQuery } from '../../redux/apiSlice'
+import {
+  useGetAllMarketsQuery,
+  useGetGlobalStatsQuery,
+} from '../../redux/apiSlice'
 import { globalStatDesc, globalStatKeys } from '../../utils/globalStats'
 import { Loader } from '../../components/loader'
 
 const App = () => {
-  const { data, error, isLoading } = useGetGlobalStatsQuery()
+  const {
+    data: statsData,
+    error: statsError,
+    isLoading: statsIsLoading,
+  } = useGetGlobalStatsQuery()
+  const {
+    data: marketData,
+    error: marketError,
+    isLoading: marketIsLoading,
+  } = useGetAllMarketsQuery()
 
   return (
     <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        data && (
-          <Container>
+      <Container>
+        <Title>Global stats</Title>
+        {statsIsLoading ? (
+          <Loader />
+        ) : (
+          statsData && (
             <Grid>
-              {Object.keys(data).map((key, index) => {
-                const values = Object.values(data)
+              {Object.keys(statsData).map((key, index) => {
+                const values = Object.values(statsData)
+                if (!values[index]) return
                 let type
                 if (globalStatKeys[index].includes('Change')) {
                   values[index][0] === '-' ? (type = 'fall') : (type = 'rise')
@@ -35,14 +50,44 @@ const App = () => {
                   <GridItem key={`${key}`}>
                     <GridItemDesc>{globalStatDesc[index]}</GridItemDesc>
                     <GridItemName>{globalStatKeys[index]}</GridItemName>
-                    <GridItemValue $type={type}>{values[index]}</GridItemValue>
+                    <GridItemValue $type={type}>
+                      {new Intl.NumberFormat('en-US').format(values[index])}
+                      {index > 3 && '%'}
+                    </GridItemValue>
                   </GridItem>
                 )
               })}
             </Grid>
-          </Container>
-        )
-      )}
+          )
+        )}
+        <Title>Top markets</Title>
+
+        {marketIsLoading ? (
+          <Loader />
+        ) : (
+          marketData && (
+            <Markets>
+              {marketData.map((market) => {
+                const { name, country, volume_usd, url } = market
+                return (
+                  <MarketItem>
+                    <div>
+                      <h2>{name}</h2>
+                      <h2>
+                        {new Intl.NumberFormat('en-US').format(volume_usd)} $
+                      </h2>
+                      <h2>{country || 'N/A'}</h2>
+                    </div>
+                    <a target="_blank" href={url}>
+                      Link
+                    </a>
+                  </MarketItem>
+                )
+              })}
+            </Markets>
+          )
+        )}
+      </Container>
     </>
   )
 }
