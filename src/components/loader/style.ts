@@ -9,7 +9,7 @@ const anim = keyframes`
   }
 `
 
-export const LoaderWrapper = styled.div`
+export const LoaderWrapper = styled.section`
   width: 20px;
   height: 20px;
   margin: 200px auto;

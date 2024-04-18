@@ -55,6 +55,15 @@ export const RatesWrapper = styled.div`
 
       transition: none;
     }
+
+    &:disabled {
+      pointer-events: none;
+      cursor: none;
+
+      div {
+        opacity: 0;
+      }
+    }
   }
 `
 

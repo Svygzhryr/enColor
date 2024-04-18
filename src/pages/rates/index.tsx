@@ -13,23 +13,29 @@ import {
   RatesWrapper,
 } from './style'
 import { Loader } from '../../components/loader'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { selectPage } from '../../redux/selectors'
+import { nextPage, prevPage } from '../../redux/basicSlice'
 
 export const Rates = () => {
   const currentPage = useSelector(selectPage)
-  const { data, error, isLoading } = useGetAllCoinsQuery({
-    start: 0,
+  const dispatch = useDispatch()
+  const { data, error, isLoading, isFetching } = useGetAllCoinsQuery({
+    start: currentPage * 10,
     limit: 10,
   })
 
-  const handlePrev = () => {}
+  const handlePrev = () => {
+    dispatch(prevPage())
+  }
 
-  const handleNext = () => {}
+  const handleNext = () => {
+    dispatch(nextPage())
+  }
 
   return (
     <RatesWrapper>
-      <ButtonPrev onClick={handlePrev}>
+      <ButtonPrev disabled={isFetching} onClick={handlePrev}>
         <div></div>
       </ButtonPrev>
 
@@ -54,7 +60,7 @@ export const Rates = () => {
           </Container>
         )
       )}
-      <ButtonNext onClick={handleNext}>
+      <ButtonNext disabled={isFetching} onClick={handleNext}>
         <div></div>
       </ButtonNext>
     </RatesWrapper>
