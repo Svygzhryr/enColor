@@ -15,6 +15,7 @@ import {
 } from '../../redux/apiSlice'
 import { globalStatDesc, globalStatKeys } from '../../utils/globalStats'
 import { Loader } from '../../components/loader'
+import link from '../../assets/link.svg'
 
 const App = () => {
   const {
@@ -79,7 +80,7 @@ const App = () => {
                       <h2>{country || 'N/A'}</h2>
                     </div>
                     <a target="_blank" href={url}>
-                      Link
+                      <img src={link}></img>
                     </a>
                   </MarketItem>
                 )

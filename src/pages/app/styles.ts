@@ -153,8 +153,10 @@ export const MarketItem = styled.div`
 
   a {
     height: 100%;
-    width: 20%;
-    padding: 20px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 
     font-size: 26px;
     text-decoration: none;
@@ -171,6 +173,11 @@ export const MarketItem = styled.div`
 
     &:active {
       background-color: ${(props) => props.theme.colors.m1};
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
     }
   }
 `

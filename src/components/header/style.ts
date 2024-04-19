@@ -10,10 +10,11 @@ export const HeaderWrapper = styled.header`
 
   border-radius: 0 0 20px 20px;
 
-  background-color: #151522;
+  background-color: ${(props) => props.theme.colors.d2};
 `
-export const NavButton = styled.button`
-  color: #e6e6f5;
+export const NavButton = styled.button<{ isactive: boolean }>`
+  color: ${(props) =>
+    props.isactive ? props.theme.colors.m1 : props.theme.colors.l1};
   font-size: 24px;
   font-family: 'Outfit', sans-serif;
 
@@ -24,6 +25,6 @@ export const NavButton = styled.button`
 
   &:hover {
     cursor: pointer;
-    color: #8080f5;
+    color: ${(props) => props.theme.colors.m1};
   }
 `

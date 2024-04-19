@@ -83,6 +83,10 @@ export const CoinWrapper = styled.li`
   color: ${(props) => props.theme.colors.l1};
   font-size: 28px;
 
+  &:first-child {
+    margin: 0;
+  }
+
   h2 {
     display: flex;
     justify-content: center;

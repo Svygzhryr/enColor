@@ -9,7 +9,9 @@ import {
 
 export const api = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://api.coinlore.net/api/' }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://api.coinlore.net/api/',
+  }),
   endpoints: (builder) => ({
     getGlobalStats: builder.query<IGlobalData, void>({
       query: () => `global/`,
