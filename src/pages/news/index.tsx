@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useId } from 'react'
 import { useGetPostsQuery } from '../../redux/newsSlice'
 import { Loader } from '../../components/loader'
 import { IArticle } from '../../types/api'
-import { NewsHeader, NewsInfo, NewsItem, NewsWrapper } from './style'
+import {
+  NewsContent,
+  NewsHeader,
+  NewsImg,
+  NewsInfo,
+  NewsItem,
+  NewsWrapper,
+} from './style'
 import { newsMock } from '../../utils/newsMock'
 
 export const News = () => {
@@ -25,15 +32,17 @@ export const News = () => {
                   href={article.url}
                   key={article.title}
                 >
+                  <NewsHeader>
+                    <h2>{article.title}</h2>
+                    <h3>{article.source.name}</h3>
+                  </NewsHeader>
                   <NewsInfo>
-                    <NewsHeader>
-                      <h2>{article.title}</h2>
-                      <h3>{article.source.name}</h3>
-                    </NewsHeader>
-                    <p>{article.description}</p>
-                    <p>{article.publishedAt.substring(0, 10)}</p>
+                    <NewsContent>
+                      <p>{article.description}</p>
+                      <p>{article.publishedAt.substring(0, 10)}</p>
+                    </NewsContent>
+                    <img src={article.urlToImage || undefined}></img>
                   </NewsInfo>
-                  {/* <img src={article.urlToImage}></img> */}
                 </NewsItem>
               )
             })}

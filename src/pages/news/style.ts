@@ -13,30 +13,27 @@ export const NewsWrapper = styled.div`
 `
 
 export const NewsItem = styled.a`
-  display: flex;
+  padding: 20px;
+
+  color: ${(props) => props.theme.colors.l1};
+  font-family: 'Outfit', sans-serif;
+
+  border-radius: 20px 0 0 20px;
   width: 100%;
+  background-color: ${(props) => props.theme.colors.d2};
 
   transition: all 0.2s ease-in-out;
-
-  img {
-    position: absolute;
-    width: 80%;
-    height: 200px;
-    z-index: 0;
-    opacity: 0.4;
-    border-radius: 0 20px 20px 0;
-  }
 
   div {
     transition: all 0.2s ease-in-out;
   }
 
-  &:hover div {
-    background-color: ${(props) => props.theme.colors.d3};
-  }
-
   &:hover {
+    background-color: ${(props) => props.theme.colors.d3};
     transform: translateX(-20px);
+
+    img {
+    }
   }
 `
 
@@ -66,17 +63,31 @@ export const NewsHeader = styled.div`
 `
 
 export const NewsInfo = styled.div`
-  padding: 20px;
-
-  color: ${(props) => props.theme.colors.l1};
-  font-family: 'Outfit', sans-serif;
-
-  border-radius: 20px 0 0 20px;
-  min-height: 200px;
-  width: 100%;
-  background-color: ${(props) => props.theme.colors.d2};
+  position: relative;
+  display: flex;
+  align-items: center;
 
   p {
     margin-top: 20px;
+
+    &:last-child {
+    }
   }
+
+  img {
+    width: 30%;
+    height: 100%;
+    border-radius: 20px;
+
+    transition: all 0.2s ease-in-out;
+  }
+`
+export const NewsContent = styled.div`
+  margin-right: 20px;
+`
+export const NewsImg = styled.div`
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  position: absolute;
 `
