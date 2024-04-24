@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   margin: 20px auto 50px;
+  max-width: 1000px;
   width: 70dvw;
 
   color: ${(props) => props.theme.colors.l1};
@@ -9,11 +10,15 @@ export const Container = styled.div`
   text-align: center;
 
   border-radius: 20px;
+
+  @media (max-width: 1110px) {
+    width: 90dvw;
+  }
 `
 
 export const Title = styled.h1`
   min-width: 220px;
-  width: calc(70dvw / 3 - 50px);
+  max-width: calc(70dvw / 3 - 50px);
   margin: 50px auto 0px;
   padding: 20px;
   display: flex;
@@ -35,6 +40,16 @@ export const Grid = styled.ul`
   gap: 20px;
   width: 100%;
   margin: 20px auto 0;
+
+  @media (max-width: 860px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 120px);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 120px);
+  }
 `
 
 export const GridItemDesc = styled.div`
@@ -76,6 +91,13 @@ export const GridItem = styled.li`
 
   &:hover ${GridItemDesc} {
     opacity: 1;
+  }
+
+  @media (max-width: 860px) {
+    &:last-child {
+      grid-column: 1 / 3;
+      grid-row: 5 / 6;
+    }
   }
 `
 
@@ -148,6 +170,10 @@ export const MarketItem = styled.div`
       color: ${(props) => props.theme.colors.l1};
 
       text-align: center;
+    }
+
+    @media (max-width: 860px) {
+      font-size: 18px;
     }
   }
 

@@ -69,6 +69,7 @@ export const RatesWrapper = styled.div`
 
 export const Container = styled.div`
   width: 70dvw;
+  max-width: 1600px;
   margin: 50px auto;
 `
 
