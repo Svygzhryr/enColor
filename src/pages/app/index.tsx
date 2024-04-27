@@ -16,6 +16,7 @@ import {
 import { globalStatDesc, globalStatKeys } from '../../utils/globalStats'
 import { Loader } from '../../components/loader'
 import link from '../../assets/link.svg'
+import { createPortal } from 'react-dom'
 
 const App = () => {
   const {

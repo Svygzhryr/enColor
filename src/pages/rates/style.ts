@@ -4,6 +4,10 @@ export const RatesWrapper = styled.div`
   display: flex;
   position: relative;
 
+  @media (max-width: 1100px) {
+    height: 100dvh;
+  }
+
   button {
     display: flex;
     justify-content: center;
@@ -15,6 +19,12 @@ export const RatesWrapper = styled.div`
 
     background-color: transparent;
     border: none;
+
+    @media (max-width: 1100px) {
+      bottom: 0;
+      height: 200px;
+      width: 50%;
+    }
 
     cursor: pointer;
 
@@ -71,6 +81,10 @@ export const Container = styled.div`
   width: 70dvw;
   max-width: 1600px;
   margin: 50px auto;
+
+  @media (max-width: 1100px) {
+    width: 90vw;
+  }
 `
 
 export const CoinWrapper = styled.li`
@@ -100,6 +114,14 @@ export const CoinWrapper = styled.li`
     border-radius: 10px;
     background-color: ${(props) => props.theme.colors.d2};
   }
+
+  @media (max-width: 1500px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 1300px) {
+    font-size: 20px;
+  }
 `
 
 export const CoinNumber = styled.h2`
@@ -112,7 +134,6 @@ export const CoinSymbol = styled.h2`
 
 export const CoinName = styled.h2`
   width: 20%;
-  font-size: 24px;
 `
 
 export const CoinPrice = styled.h2`
@@ -122,7 +143,6 @@ export const CoinPrice = styled.h2`
 
 export const CoinChangeDay = styled.h2<{ $type: boolean }>`
   width: 10%;
-  font-size: 24px;
 
   color: ${(props) =>
     props.$type ? props.theme.colors.fall : props.theme.colors.rise};

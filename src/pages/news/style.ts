@@ -63,6 +63,7 @@ export const NewsHeader = styled.div`
 `
 
 export const NewsInfo = styled.div`
+  height: 100%;
   position: relative;
   display: flex;
   align-items: center;
@@ -75,14 +76,20 @@ export const NewsInfo = styled.div`
   }
 
   img {
-    width: 30%;
-    height: 100%;
+    width: 200px;
+    height: 200px;
     border-radius: 20px;
+    object-fit: cover;
+    object-position: 50% 0;
 
     transition: all 0.2s ease-in-out;
   }
 `
 export const NewsContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
   margin-right: 20px;
 `
 export const NewsImg = styled.div`
