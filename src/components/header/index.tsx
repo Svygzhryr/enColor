@@ -9,11 +9,11 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <Link to="/rates">
-        <NavButton isactive={pathname === '/rates'}>Rates</NavButton>
+        <NavButton isactive={pathname === '/rates' ? 1 : 0}>Rates</NavButton>
       </Link>
       <Logo />
       <Link to="/news">
-        <NavButton isactive={pathname === '/news'}>News</NavButton>
+        <NavButton isactive={pathname === '/news' ? 1 : 0}>News</NavButton>
       </Link>
     </HeaderWrapper>
   )

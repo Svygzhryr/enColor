@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
 
   background-color: ${(props) => props.theme.colors.d2};
 `
-export const NavButton = styled.button<{ isactive: boolean }>`
+export const NavButton = styled.button<{ isactive: number }>`
   color: ${(props) =>
     props.isactive ? props.theme.colors.m1 : props.theme.colors.l1};
   font-size: 24px;

@@ -10,6 +10,11 @@ export const NewsWrapper = styled.div`
   /* flex-wrap: wrap; */
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 1050px) {
+    width: 90%;
+    padding: 0 10px;
+  }
 `
 
 export const NewsItem = styled.a`
@@ -19,7 +24,7 @@ export const NewsItem = styled.a`
   font-family: 'Outfit', sans-serif;
 
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
   background-color: ${(props) => props.theme.colors.d2};
 
   transition: all 0.2s ease-in-out;
@@ -66,6 +71,7 @@ export const NewsInfo = styled.div`
   height: 100%;
   position: relative;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   p {
@@ -83,6 +89,11 @@ export const NewsInfo = styled.div`
     object-position: 50% 0;
 
     transition: all 0.2s ease-in-out;
+
+    @media (max-width: 1050px) {
+      width: 150px;
+      height: 150px;
+    }
   }
 `
 export const NewsContent = styled.div`
@@ -91,6 +102,10 @@ export const NewsContent = styled.div`
   justify-content: space-between;
   height: 200px;
   margin-right: 20px;
+
+  @media (max-width: 1050px) {
+    height: auto;
+  }
 `
 export const NewsImg = styled.div`
   width: 50px;

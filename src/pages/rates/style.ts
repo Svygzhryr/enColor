@@ -122,6 +122,18 @@ export const CoinWrapper = styled.li`
   @media (max-width: 1300px) {
     font-size: 20px;
   }
+
+  @media (max-width: 1300px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 630px) {
+    font-size: 14px;
+  }
+
+  @media (max-width: 430px) {
+    font-size: 12px;
+  }
 `
 
 export const CoinNumber = styled.h2`

@@ -47,8 +47,8 @@ export const Grid = styled.ul`
   }
 
   @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(9, 120px);
+    display: flex;
+    flex-direction: column;
   }
 `
 
