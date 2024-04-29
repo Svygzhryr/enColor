@@ -11,19 +11,22 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Rates } from './pages/rates/index.tsx'
 import { News } from './pages/news/index.tsx'
 import { Header } from './components/header/index.tsx'
+import ErrorBoundary from './utils/errorBoundary.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <ThemeProvider theme={defaultTheme}>
       <React.StrictMode>
-        <BrowserRouter>
-          <Header />
-          <Routes>
-            <Route path="/" Component={App} />
-            <Route path="/rates" Component={Rates} />
-            <Route path="/news" Component={News} />
-          </Routes>
-        </BrowserRouter>
+        <ErrorBoundary>
+          <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" Component={App} />
+              <Route path="/rates" Component={Rates} />
+              <Route path="/news" Component={News} />
+            </Routes>
+          </BrowserRouter>
+        </ErrorBoundary>
       </React.StrictMode>
     </ThemeProvider>
   </Provider>

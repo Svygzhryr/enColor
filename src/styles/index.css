@@ -7,6 +7,10 @@ body {
   color: white;
 }
 
+h1 {
+  font-size: 32px;
+}
+
 a {
   text-decoration: none;
 }

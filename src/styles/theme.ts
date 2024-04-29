@@ -5,6 +5,7 @@ export const defaultTheme = {
     d1: '#0D0D13',
     d2: '#151522',
     d3: '#1C1C30',
+    d3t: '#1C1C3090',
     m1: '#8080F5',
     m2: '#474784',
     m3: '',

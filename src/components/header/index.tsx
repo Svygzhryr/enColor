@@ -1,13 +1,26 @@
 import { Link, useLocation } from 'react-router-dom'
 import { Logo } from '../logo'
 import { HeaderWrapper, NavButton } from './style'
+import { useEffect, useState } from 'react'
 
 export const Header = () => {
   const location = useLocation()
   const { pathname } = location
 
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 0)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return window.addEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <HeaderWrapper>
+    <HeaderWrapper isScrolled={isScrolled ? 1 : 0}>
       <Link to="/rates">
         <NavButton isactive={pathname === '/rates' ? 1 : 0}>Rates</NavButton>
       </Link>
