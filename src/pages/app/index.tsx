@@ -16,19 +16,12 @@ import {
 import { globalStatDesc, globalStatKeys } from '../../utils/globalStats'
 import { Loader } from '../../components/loader'
 import link from '../../assets/link.svg'
-import { createPortal } from 'react-dom'
 
 const App = () => {
-  const {
-    data: statsData,
-    error: statsError,
-    isLoading: statsIsLoading,
-  } = useGetGlobalStatsQuery()
-  const {
-    data: marketData,
-    error: marketError,
-    isLoading: marketIsLoading,
-  } = useGetAllMarketsQuery()
+  const { data: statsData, isLoading: statsIsLoading } =
+    useGetGlobalStatsQuery()
+  const { data: marketData, isLoading: marketIsLoading } =
+    useGetAllMarketsQuery()
 
   return (
     <>

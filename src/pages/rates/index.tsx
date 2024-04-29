@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useGetAllCoinsQuery } from '../../redux/apiSlice'
 import {
   ButtonNext,
@@ -20,7 +19,7 @@ import { nextPage, prevPage } from '../../redux/basicSlice'
 export const Rates = () => {
   const currentPage = useSelector(selectPage)
   const dispatch = useDispatch()
-  const { data, error, isLoading, isFetching } = useGetAllCoinsQuery({
+  const { data, isLoading, isFetching } = useGetAllCoinsQuery({
     start: currentPage * 10,
     limit: 10,
   })

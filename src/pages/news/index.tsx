@@ -1,11 +1,7 @@
-import React, { useDeferredValue, useId, useState } from 'react'
-import { useGetPostsQuery } from '../../redux/newsSlice'
 import { Loader } from '../../components/loader'
-import { IArticle } from '../../types/api'
 import {
   NewsContent,
   NewsHeader,
-  NewsImg,
   NewsInfo,
   NewsItem,
   NewsWrapper,
@@ -17,8 +13,6 @@ export const News = () => {
   // console.log(data)
   const isLoading = false
   const data = newsMock
-  const [count, setCount] = useState(0)
-  const deferredCount = useDeferredValue(count)
 
   return (
     <>

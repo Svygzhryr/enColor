@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import { FC } from 'react'
 import { ErrorWrapper } from './style'
 
 interface IFallback {

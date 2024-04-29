@@ -1,4 +1,3 @@
-import React from 'react'
 import { LoaderElement, LoaderWrapper } from './style'
 
 export const Loader = () => {
