@@ -20,7 +20,7 @@ export const Header = () => {
   }, [])
 
   return (
-    <HeaderWrapper isScrolled={isScrolled ? 1 : 0}>
+    <HeaderWrapper isscrolled={isScrolled ? 1 : 0}>
       <Link to="/rates">
         <NavButton isactive={pathname === '/rates' ? 1 : 0}>Rates</NavButton>
       </Link>

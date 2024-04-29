@@ -124,10 +124,12 @@ export const Markets = styled.div`
   margin: 20px auto 0;
 `
 
-export const MarketItem = styled.div`
+export const MarketItem = styled.a`
   display: flex;
   align-items: center;
   margin: 20px 0;
+
+  pointer-events: none;
 
   div {
     width: 100%;
@@ -143,6 +145,15 @@ export const MarketItem = styled.div`
     background-color: ${(props) => props.theme.colors.d2};
 
     transition: all 0.2s ease-in-out;
+
+    @media (max-width: 400px) {
+      pointer-events: all;
+
+      &:hover,
+      &:hover h2 {
+        background-color: ${(props) => props.theme.colors.d3};
+      }
+    }
   }
 
   h2 {
@@ -162,6 +173,10 @@ export const MarketItem = styled.div`
       color: ${(props) => props.theme.colors.l1};
 
       text-align: center;
+
+      @media (max-width: 600px) {
+        width: 40%;
+      }
     }
 
     &:last-child {
@@ -170,10 +185,18 @@ export const MarketItem = styled.div`
       color: ${(props) => props.theme.colors.l1};
 
       text-align: center;
+
+      @media (max-width: 600px) {
+        display: none;
+      }
     }
 
     @media (max-width: 860px) {
       font-size: 18px;
+    }
+
+    @media (max-width: 600px) {
+      width: 60%;
     }
   }
 
@@ -193,6 +216,8 @@ export const MarketItem = styled.div`
 
     transition: all 0.2s ease-in-out;
 
+    pointer-events: all;
+
     &:hover {
       background-color: ${(props) => props.theme.colors.d3};
     }
@@ -205,5 +230,13 @@ export const MarketItem = styled.div`
       width: 50px;
       height: 50px;
     }
+
+    @media (max-width: 400px) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 400px) {
+    display: block;
   }
 `

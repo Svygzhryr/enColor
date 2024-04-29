@@ -35,10 +35,6 @@ export const Rates = () => {
 
   return (
     <RatesWrapper>
-      <ButtonPrev disabled={isFetching} onClick={handlePrev}>
-        <div></div>
-      </ButtonPrev>
-
       {isLoading ? (
         <Loader />
       ) : (
@@ -60,6 +56,9 @@ export const Rates = () => {
           </Container>
         )
       )}
+      <ButtonPrev disabled={isFetching} onClick={handlePrev}>
+        <div></div>
+      </ButtonPrev>
       <ButtonNext disabled={isFetching} onClick={handleNext}>
         <div></div>
       </ButtonNext>

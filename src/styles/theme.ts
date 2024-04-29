@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components'
 export const defaultTheme = {
   colors: {
     d1: '#0D0D13',
+    d1t: '#0D0D1390',
     d2: '#151522',
     d3: '#1C1C30',
     d3t: '#1C1C3090',

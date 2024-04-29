@@ -72,7 +72,7 @@ const App = () => {
               {marketData.map((market) => {
                 const { name, country, volume_usd, url } = market
                 return (
-                  <MarketItem key={name}>
+                  <MarketItem href={market.url} key={name}>
                     <div>
                       <h2>{name}</h2>
                       <h2>

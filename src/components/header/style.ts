@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HeaderWrapper = styled.header<{ isScrolled: number }>`
+export const HeaderWrapper = styled.header<{ isscrolled: number }>`
   width: 400px;
   height: 60px;
   margin: 0 auto;
@@ -12,13 +12,13 @@ export const HeaderWrapper = styled.header<{ isScrolled: number }>`
 
   border-radius: 0 0 20px 20px;
   border-bottom: ${(props) =>
-    props.isScrolled
+    props.isscrolled
       ? `2px solid ${props.theme.colors.m1}`
       : '2px solid transparent'};
   background-color: ${(props) =>
-    props.isScrolled ? props.theme.colors.d3t : props.theme.colors.d2};
+    props.isscrolled ? props.theme.colors.d3t : props.theme.colors.d2};
   z-index: 1000;
-  backdrop-filter: ${(props) => (props.isScrolled ? `blur(5px)` : 'none')};
+  backdrop-filter: ${(props) => (props.isscrolled ? `blur(5px)` : 'none')};
 
   transition: all 0.2s ease-in-out;
 
