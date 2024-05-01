@@ -12,7 +12,7 @@ export const LogoContainer = styled.div`
 
 export const LogoCRY = styled.span`
   font-size: 38px;
-  color: #e6e6f5;
+  color: ${(props) => props.theme.colors.l1};
   font-weight: 700;
   font-family: 'Josefin Sans', sans-serif;
   font-style: italic;
@@ -20,7 +20,7 @@ export const LogoCRY = styled.span`
 
 export const LogoO = styled.span`
   font-size: 38px;
-  color: #8080f5;
+  color: ${(props) => props.theme.colors.m1};
   font-weight: 700;
   font-family: 'Josefin Sans', sans-serif;
 `

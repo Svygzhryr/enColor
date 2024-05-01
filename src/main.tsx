@@ -6,28 +6,31 @@ import './styles/index.css'
 import { store } from './redux/store.ts'
 import { Provider } from 'react-redux'
 import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from './styles/theme.ts'
+import { darkTheme, lightTheme } from './styles/theme.ts'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Rates } from './pages/rates/index.tsx'
 import { News } from './pages/news/index.tsx'
 import { Header } from './components/header/index.tsx'
 import ErrorBoundary from './utils/errorBoundary.tsx'
+import { AppWrapper } from './styles/main.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
-    <ThemeProvider theme={defaultTheme}>
-      <React.StrictMode>
-        <ErrorBoundary>
-          <BrowserRouter>
-            <Header />
-            <Routes>
-              <Route path="/" Component={App} />
-              <Route path="/rates" Component={Rates} />
-              <Route path="/news" Component={News} />
-            </Routes>
-          </BrowserRouter>
-        </ErrorBoundary>
-      </React.StrictMode>
-    </ThemeProvider>
+    <React.StrictMode>
+      <ErrorBoundary>
+        <BrowserRouter>
+          <ThemeProvider theme={darkTheme}>
+            <AppWrapper>
+              <Header />
+              <Routes>
+                <Route path="/" Component={App} />
+                <Route path="/rates" Component={Rates} />
+                <Route path="/news" Component={News} />
+              </Routes>
+            </AppWrapper>
+          </ThemeProvider>
+        </BrowserRouter>
+      </ErrorBoundary>
+    </React.StrictMode>
   </Provider>
 )

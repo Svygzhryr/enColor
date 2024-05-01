@@ -2,11 +2,6 @@
   font-family: 'Outfit', sans-serif;
 }
 
-body {
-  background: #0d0d13;
-  color: white;
-}
-
 h1 {
   font-size: 32px;
 }
@@ -35,4 +30,12 @@ a {
 *::-webkit-scrollbar-thumb {
   background-color: #1c1c30;
   border-radius: 10px;
+}
+
+html {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
 }

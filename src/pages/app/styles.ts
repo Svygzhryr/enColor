@@ -4,6 +4,7 @@ export const Container = styled.div`
   margin: 20px auto 50px;
   max-width: 1000px;
   width: 70dvw;
+  padding: 0 0 50px;
 
   color: ${(props) => props.theme.colors.l1};
   font-size: 24px;
@@ -65,7 +66,7 @@ export const GridItemDesc = styled.div`
   font-size: 20px;
 
   border-radius: 20px;
-  background-color: #15152299;
+  background-color: ${(props) => props.theme.colors.d1t};
 
   z-index: 1;
 
