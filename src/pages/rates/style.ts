@@ -67,7 +67,6 @@ export const RatesWrapper = styled.div`
       bottom: 0;
       height: 200px;
       width: 50%;
-      margin-bottom: -150px;
     }
 
     @media (max-width: 450px) {
@@ -103,8 +102,12 @@ export const RatesWrapper = styled.div`
     }
   }
 
+  @media (max-width: 1100px) {
+    padding-bottom: 150px;
+  }
+
   @media (max-width: 450px) {
-    margin-bottom: 40px;
+    padding-bottom: 40px;
   }
 `
 
