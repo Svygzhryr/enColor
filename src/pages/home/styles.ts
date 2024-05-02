@@ -66,7 +66,7 @@ export const GridItemDesc = styled.div`
   font-size: 20px;
 
   border-radius: 20px;
-  background-color: ${(props) => props.theme.colors.d1t};
+  background-color: ${(props) => props.theme.colors.d3t};
 
   z-index: 1;
 

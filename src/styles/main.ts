@@ -2,6 +2,6 @@ import styled from 'styled-components'
 
 export const AppWrapper = styled.main`
   position: relative;
-  height: 100%;
+  min-height: 800px;
   background-color: ${(props) => props.theme.colors.d1};
 `

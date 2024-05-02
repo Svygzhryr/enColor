@@ -10,28 +10,31 @@ a {
   text-decoration: none;
 }
 
+html {
+  height: 100%;
+}
+
+body {
+  height: 100dvh;
+}
+
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #1c1c30 transparent;
+  scrollbar-color: #1c1c30 #0d0d13;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
   width: 16px;
-  background: transparent;
+  background: #e6e6f5;
 }
 
 *::-webkit-scrollbar-track {
-  background: transparent;
+  background: #e6e6f5;
 }
 
 *::-webkit-scrollbar-thumb {
   background-color: #1c1c30;
-  border-radius: 10px;
-}
-
-html {
-  height: 100%;
 }

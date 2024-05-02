@@ -16,12 +16,16 @@ import {
 import { globalStatDesc, globalStatKeys } from '../../utils/globalStats'
 import { Loader } from '../../components/loader'
 import link from '../../assets/link.svg'
+import linklight from '../../assets/link-light.svg'
+import { selectTheme } from '../../redux/selectors'
+import { useSelector } from 'react-redux'
 
-const App = () => {
+const Home = () => {
   const { data: statsData, isLoading: statsIsLoading } =
     useGetGlobalStatsQuery()
   const { data: marketData, isLoading: marketIsLoading } =
     useGetAllMarketsQuery()
+  const theme = useSelector(selectTheme)
 
   return (
     <>
@@ -74,7 +78,7 @@ const App = () => {
                       <h2>{country || 'N/A'}</h2>
                     </div>
                     <a target="_blank" href={url}>
-                      <img src={link}></img>
+                      <img src={theme === 'darkTheme' ? link : linklight}></img>
                     </a>
                   </MarketItem>
                 )
@@ -87,4 +91,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Home

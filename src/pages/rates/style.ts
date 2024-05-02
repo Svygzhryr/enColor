@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const RatesWrapper = styled.div`
   display: flex;
   position: relative;
-  height: 100%;
 
   button {
     display: flex;

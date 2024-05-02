@@ -43,5 +43,6 @@ export const GlobalStyle = createGlobalStyle`
 *::before,
 *::after {
   font-family: 'Outfit', sans-serif;
+  
 }
 `
