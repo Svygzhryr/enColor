@@ -8,6 +8,13 @@ export const LogoContainer = styled.div`
   :hover {
     cursor: pointer;
   }
+
+  @media (max-width: 550px) {
+    margin: 0 10px;
+    span {
+      font-size: 28px;
+    }
+  }
 `
 
 export const LogoCRY = styled.span`

@@ -29,4 +29,9 @@ export const SwitchButton = styled.button`
 
     color: white;
   }
+
+  @media (max-width: 550px) {
+    position: static;
+    background-color: transparent;
+  }
 `

@@ -18,9 +18,14 @@ export const HeaderWrapper = styled.header<{ isscrolled: number }>`
   background-color: ${(props) =>
     props.isscrolled ? props.theme.colors.d3t : props.theme.colors.d2};
   z-index: 1000;
-  backdrop-filter: ${(props) => (props.isscrolled ? `blur(5px)` : 'none')};
+  /* backdrop-filter: ${(props) =>
+    props.isscrolled ? `blur(5px)` : 'none'}; */
 
   transition: all 0.2s ease-in-out;
+
+  @media (max-width: 550px) {
+    justify-content: space-around;
+  }
 
   @media (max-width: 450px) {
     width: 100%;
@@ -41,5 +46,9 @@ export const NavButton = styled.button<{ isactive: number }>`
   &:hover {
     cursor: pointer;
     color: ${(props) => props.theme.colors.m1};
+  }
+
+  @media (max-width: 550px) {
+    font-size: 18px;
   }
 `

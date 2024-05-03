@@ -22,8 +22,6 @@ export const Header = () => {
 
   return (
     <>
-      <ThemeSwitch />
-
       <HeaderWrapper isscrolled={isScrolled ? 1 : 0}>
         <Link to="/rates">
           <NavButton isactive={pathname === '/rates' ? 1 : 0}>Rates</NavButton>
@@ -32,6 +30,7 @@ export const Header = () => {
         <Link to="/news">
           <NavButton isactive={pathname === '/news' ? 1 : 0}>News</NavButton>
         </Link>
+        <ThemeSwitch />
       </HeaderWrapper>
     </>
   )
