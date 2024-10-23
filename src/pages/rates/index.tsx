@@ -34,7 +34,7 @@ export const Rates = () => {
 
   return (
     <RatesWrapper>
-      {!isLoading ? (
+      {isLoading ? (
         <Loader />
       ) : (
         data && (
