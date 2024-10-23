@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const NewsWrapper = styled.div`
   position: relative;
   width: 60%;
-  margin: 50px auto;
+  margin: 50px auto 0;
+  padding-bottom: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

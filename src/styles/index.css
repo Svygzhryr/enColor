@@ -11,11 +11,11 @@ a {
 }
 
 html {
-  height: 100%;
 }
 
 body {
-  height: 100dvh;
+  /* height: 100dvh; */
+  /* background: #0d0d13; */
 }
 
 /* ===== Scrollbar CSS ===== */

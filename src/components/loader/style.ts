@@ -10,11 +10,11 @@ const anim = keyframes`
 `
 
 export const LoaderWrapper = styled.section`
-  width: 20px;
-  height: 20px;
+  width: 40px;
+  height: 40px;
   margin: 200px auto;
 
-  border: 20px dotted ${(props) => props.theme.colors.l1};
+  border: 22px dotted ${(props) => props.theme.colors.l1};
   border-radius: 50%;
   /* background-color: ${(props) => props.theme.colors.d3}; */
 
