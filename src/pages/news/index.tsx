@@ -6,13 +6,16 @@ import {
   NewsItem,
   NewsWrapper,
 } from './style'
-import { newsMock } from '../../utils/newsMock'
+import imageFallback from '../../assets/no-image.png'
+import { useGetPostsQuery } from '../../redux/newsSlice'
 
 export const News = () => {
-  // const { data, isLoading, isError } = useGetPostsQuery()
+  const { data, isLoading, isError } = useGetPostsQuery()
   // console.log(data)
-  const isLoading = false
-  const data = newsMock
+  // const isLoading = false
+  // const data = newsMock
+
+  if (isError) return <h2>An error has occured</h2>
 
   return (
     <>
@@ -26,7 +29,7 @@ export const News = () => {
                 <NewsItem
                   target="_blank"
                   href={article.url}
-                  key={article.title}
+                  key={article.publishedAt + article.urlToImage}
                 >
                   <NewsHeader>
                     <h2>{article.title}</h2>
@@ -37,7 +40,7 @@ export const News = () => {
                       <p>{article.description}</p>
                       <p>{article.publishedAt.substring(0, 10)}</p>
                     </NewsContent>
-                    <img src={article.urlToImage || undefined}></img>
+                    <img src={article.urlToImage || imageFallback}></img>
                   </NewsInfo>
                 </NewsItem>
               )
