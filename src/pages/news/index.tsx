@@ -7,15 +7,13 @@ import {
   NewsWrapper,
 } from './style'
 import imageFallback from '../../assets/no-image.png'
-import { useGetPostsQuery } from '../../redux/newsSlice'
+import { newsMock } from '../../utils/newsMock'
 
 export const News = () => {
-  const { data, isLoading, isError } = useGetPostsQuery()
-  // console.log(data)
-  // const isLoading = false
-  // const data = newsMock
-
-  if (isError) return <h2>An error has occured</h2>
+  // const { data, isLoading, isError } = useGetPostsQuery()
+  // can't use this api because of paid plans for hosting other than localhost
+  const isLoading = false
+  const data = newsMock
 
   return (
     <>
